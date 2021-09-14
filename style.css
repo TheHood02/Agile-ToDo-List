@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    background-color: #0E032B;
+}
+
+img {
+    display: block;
+    width: 25px;
+    cursor: pointer;
+}
+
+/* =================
+Typography
+================= */
+
+button {
+    color: #F9F8FA;
+    font-weight: 600;
+}
+
+.stuff {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.head {
+    color: #6100FF;
+    text-align: center;
+    text-shadow: 3px 4px 8px #AD00FF;
+    margin: 100px 0;
+}
+
+.main {
+    text-align: center;
+}
+
+#input-item {
+    font-weight: 400;
+}
+
+.list-item {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* =================
+Layout
+================= */
+
+button {
+    background-color: #AD00FF;
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.entry-field {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 25px 0;
+}
+
+#input-item {
+    border: 1px solid #898282;
+    border-radius: 5px;
+}
+
+#todo-list, .entry-field {
+    background-color: #F9F8FA;
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 20px 0;
+}
+
+.list-item {
+    width: 80%;
+    padding: 5px;
+    border-bottom: 1px solid #898282;
+}
+
+.del-btn {
+    height: 3rem;
+}
