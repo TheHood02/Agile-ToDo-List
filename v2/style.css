@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+    color: white; /* remove this later */
+}
+
+html, body{
+    margin: 0;
+}
+/* add some kind of styling so that user comes to know when the button is clicked */
+body {
+    background-color: #191927;
+}
+
+.category {
+    cursor: pointer;
+    margin: 20px;
+}
