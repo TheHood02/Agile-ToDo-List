@@ -14,6 +14,7 @@
     <div class="navbar">
       <div class="navbar__heading">Agile</div>
       <hr />
+      <button id="add-task">+ Add Task</button>
       <div class="navbar__add-button"></div>
       <div class="navbar__categories">
         <div class="category category--ideas">Ideas</div>
@@ -33,6 +34,38 @@
       <div class="card--heading resources">Resources</div> -->
       <div class="card--heading"></div>
       <div class="cards"></div>
+    </div>
+
+    <!-- Modal Section -->
+
+    <div class="modal--bg">
+      <div class="modal__contents">
+        <div id="close">+</div>
+        <input id="title" type="text" placeholder="Title" required />
+        <textarea
+          id="desc"
+          cols="20"
+          rows="5"
+          placeholder="Description"
+          required
+        ></textarea>
+        <div class="radio-buttons">
+          <form action="">
+            <input type="radio" id="idea" name="category-selection" value="Idea" />
+            <label for="idea">Idea</label> <br />
+
+            <input type="radio" id="reminder" name="category-selection" value="Reminder"/>
+            <label for="reminder">Reminder</label> <br />
+
+            <input type="radio" id="project" name="category-selection" value="Project"/>
+            <label for="project">Project</label> <br />
+
+            <input type="radio" id="resource" name="category-selection" value="Resource"/>
+            <label for="resource">Resource</label> <br />
+          </form>
+        </div>
+        <button id="submit-btn">Submit</button>
+      </div>
     </div>
   </body>
 </html>

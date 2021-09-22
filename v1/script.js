@@ -5,7 +5,6 @@ import {
   getDatabase,
   ref,
   get,
-  set,
   update,
   remove,
   push,
@@ -59,7 +58,6 @@ addBtn.addEventListener("click", (e) => {
 
 // render task on page and add functionality to delete button
 for (let item in todos) {
-  // console.log(item, todos[item]['desc'])
 
   let newDiv = document.createElement("div");
   newDiv.classList.add("item");

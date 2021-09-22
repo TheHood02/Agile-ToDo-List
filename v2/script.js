@@ -30,7 +30,7 @@ const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
 const getTodo = async () => {
-  let res = await get(ref(db, "/Agile v2"));
+  let res = await get(ref(db, '/Agile v2'));
   let todos = res.val();
   return todos;
 };
@@ -45,30 +45,9 @@ const projectsBtn = document.querySelector(".category--projects");
 const resourcesBtn = document.querySelector(".category--resources");
 const categoryHeading = document.querySelector(".card--heading");
 const cards = document.querySelector(".cards");
+const btns = [ideasBtn, remindersBtn, projectsBtn, resourcesBtn];
 
-function categoryToRender(category) {
-
-  let btn = ideasBtn;
-
-  btn.style = "pointer-events: none; cursor: none";
-
-  if (category == 'Ideas') {
-    remindersBtn.style = "pointer-events: auto; cursor: pointer";
-    projectsBtn.style = "pointer-events: auto; cursor: pointer";
-    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
-  } else if (category == 'Reminders') {
-    ideasBtn.style = "pointer-events: auto; cursor: pointer";
-    projectsBtn.style = "pointer-events: auto; cursor: pointer";
-    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
-  } else if (category == 'Projects') {
-    ideasBtn.style = "pointer-events: auto; cursor: pointer";
-    remindersBtn.style = "pointer-events: auto; cursor: pointer";
-    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
-  } else if (category == 'Resources') {
-    ideasBtn.style = "pointer-events: auto; cursor: pointer";
-    remindersBtn.style = "pointer-events: auto; cursor: pointer";
-    projectsBtn.style = "pointer-events: auto; cursor: pointer";
-  }
+function categoryToRender(category, btnName) {
 
   categoryHeading.innerHTML = "";
   cards.innerHTML = "";
@@ -95,20 +74,62 @@ function categoryToRender(category) {
     newCard.appendChild(newTitle);
     newCard.appendChild(newDesc);
   }
+
+  for (let btn in btns) {
+    if (btns[btn] !== btnName) {
+      btns[btn].style = "pointer-events: auto; cursor: pointer";
+    } else {
+      btns[btn].style = "pointer-events: none; cursor: none";
+    }
+  }
 }
 
 ideasBtn.addEventListener('click', () => {
-  categoryToRender('Ideas');
+  categoryToRender('Ideas', ideasBtn);
 });
 
 remindersBtn.addEventListener('click', () => {
-  categoryToRender('Reminders');
+  categoryToRender('Reminders', remindersBtn);
 });
 
 projectsBtn.addEventListener('click', () => {
-  categoryToRender('Projects');
+  categoryToRender('Projects', projectsBtn);
 });
 
 resourcesBtn.addEventListener('click', () => {
-  categoryToRender('Resources');
+  categoryToRender('Resources', resourcesBtn);
 });
+
+// modal
+
+document.getElementById('add-task').addEventListener('click', () => {
+  document.querySelector('.modal--bg').style = "display: flex";
+})
+
+document.getElementById('close').addEventListener('click', () => {
+  document.querySelector('.modal--bg').style = "display: none";
+})
+
+document.getElementById('submit-btn').addEventListener('click', () => {
+
+  const title = document.getElementById('title').value;
+  const desc = document.getElementById('desc').value;
+  const obj = {
+    date: Date().substr(0, 25),
+    title: title,
+    desc: desc
+  };
+
+  //* to get which radio button is selected
+  console.log(document.querySelector('input[name="category-selection"]:checked').value);
+
+  const uid = push(ref(db, '/Adile v2')).key;
+
+  update(ref(db, `/Agile v2/${uid}`), obj);
+  document.getElementById('title').value = "";
+  document.getElementById('desc').value = "";
+
+  
+
+  // document.querySelector('.modal--bg').style = "display: none";
+})

@@ -18,3 +18,58 @@ body {
     cursor: pointer;
     margin: 20px;
 }
+
+/***************
+Modal Design
+***************/
+
+.modal--bg {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__contents {
+    background-color: #0E153E;
+    position: relative;
+    text-align: center;
+    height: 400px;
+    width: 300px;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.5em;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+#close:hover {
+    color: green;
+}
+
+form {
+    text-align: left;
+    
+}
+
+input[type=text], textarea {
+    color: black;
+    resize: none;
+}
+
+input[type=radio] {
+    margin: 13px;
+}
+
+button {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}

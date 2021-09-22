@@ -82,6 +82,7 @@ button {
     background-color: #F9F8FA;
     padding: 15px 25px;
     border-radius: 5px;
+    /* box-shadow: rgba(247, 101, 162, 0.75) 0px 50px 100px -20px, rgba(221, 117, 255, 0.80) 0px 30px 60px -30px, rgba(250, 35, 110, 0.85) 0px -2px 6px 0px inset; */
 }
 
 .item {
