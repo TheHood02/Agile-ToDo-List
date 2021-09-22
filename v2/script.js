@@ -39,77 +39,76 @@ const todos = await getTodo();
 //TODO: design add button at last bcoz it will include the popup modal stuff
 //TODO: make the cards clickable and limit the number of words in first page
 
-const ideasBtn = document.querySelector('.category--ideas');
-const remindersBtn = document.querySelector('.category--reminders');
-const categoryHeading = document.querySelector('.card--heading');
-const cards = document.querySelector('.cards');
+const ideasBtn = document.querySelector(".category--ideas");
+const remindersBtn = document.querySelector(".category--reminders");
+const projectsBtn = document.querySelector(".category--projects");
+const resourcesBtn = document.querySelector(".category--resources");
+const categoryHeading = document.querySelector(".card--heading");
+const cards = document.querySelector(".cards");
 
-ideasBtn.addEventListener('click', () => {
+function categoryToRender(category) {
 
-  ideasBtn.style = 'pointer-events: none; cursor: none';
-  remindersBtn.style = 'pointer-events: auto; cursor: pointer';
+  let btn = ideasBtn;
 
-  categoryHeading.innerHTML = '';
-  cards.innerHTML = '';
+  btn.style = "pointer-events: none; cursor: none";
+
+  if (category == 'Ideas') {
+    remindersBtn.style = "pointer-events: auto; cursor: pointer";
+    projectsBtn.style = "pointer-events: auto; cursor: pointer";
+    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
+  } else if (category == 'Reminders') {
+    ideasBtn.style = "pointer-events: auto; cursor: pointer";
+    projectsBtn.style = "pointer-events: auto; cursor: pointer";
+    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
+  } else if (category == 'Projects') {
+    ideasBtn.style = "pointer-events: auto; cursor: pointer";
+    remindersBtn.style = "pointer-events: auto; cursor: pointer";
+    resourcesBtn.style = "pointer-events: auto; cursor: pointer";
+  } else if (category == 'Resources') {
+    ideasBtn.style = "pointer-events: auto; cursor: pointer";
+    remindersBtn.style = "pointer-events: auto; cursor: pointer";
+    projectsBtn.style = "pointer-events: auto; cursor: pointer";
+  }
+
+  categoryHeading.innerHTML = "";
+  cards.innerHTML = "";
 
   let cardHeadingType = document.createElement("p");
-  cardHeadingType.classList.add('ideas');
-  cardHeadingType.textContent = 'Ideas';
+  cardHeadingType.classList.add(category.toLowerCase());
+  cardHeadingType.textContent = category;
   categoryHeading.appendChild(cardHeadingType);
 
-  // document.querySelector('card--heading reminders').style = 'display: none';
-  
-  for (let item in todos['Ideas']) {
-
-    let newCard = document.createElement('div');
-    newCard.classList.add('card');
+  for (let item in todos[category]) {
+    let newCard = document.createElement("div");
+    newCard.classList.add("card");
     cards.appendChild(newCard);
 
-    let newTitle = document.createElement('p');
-    let newDesc = document.createElement('p');
+    let newTitle = document.createElement("p");
+    let newDesc = document.createElement("p");
 
-    newTitle.classList.add('card__title');
-    newDesc.classList.add('card__desc');
+    newTitle.classList.add("card__title");
+    newDesc.classList.add("card__desc");
 
-    newTitle.textContent = `${todos['Ideas'][item]['title']}`;
-    newDesc.textContent = `${todos['Ideas'][item]['desc']}`;
+    newTitle.textContent = `${todos[category][item]["title"]}`;
+    newDesc.textContent = `${todos[category][item]["desc"]}`;
 
     newCard.appendChild(newTitle);
     newCard.appendChild(newDesc);
   }
+}
+
+ideasBtn.addEventListener('click', () => {
+  categoryToRender('Ideas');
 });
 
 remindersBtn.addEventListener('click', () => {
+  categoryToRender('Reminders');
+});
 
-  ideasBtn.style = 'pointer-events: auto; cursor: pointer';
-  remindersBtn.style = 'pointer-events: none; cursor: none';
+projectsBtn.addEventListener('click', () => {
+  categoryToRender('Projects');
+});
 
-  categoryHeading.innerHTML = '';
-  cards.innerHTML = '';
-
-  let cardHeadingType = document.createElement("p");
-  cardHeadingType.classList.add('reminders');
-  cardHeadingType.textContent = 'Reminders';
-  categoryHeading.appendChild(cardHeadingType);
-
-  // document.querySelector('card--heading reminders').style = 'display: none';
-  
-  for (let item in todos['Reminders']) {
-
-    let newCard = document.createElement('div');
-    newCard.classList.add('card');
-    cards.appendChild(newCard);
-
-    let newTitle = document.createElement('p');
-    let newDesc = document.createElement('p');
-
-    newTitle.classList.add('card__title');
-    newDesc.classList.add('card__desc');
-
-    newTitle.textContent = `${todos['Reminders'][item]['title']}`;
-    newDesc.textContent = `${todos['Reminders'][item]['desc']}`;
-
-    newCard.appendChild(newTitle);
-    newCard.appendChild(newDesc);
-  }
+resourcesBtn.addEventListener('click', () => {
+  categoryToRender('Resources');
 });
