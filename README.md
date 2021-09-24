@@ -1,2 +1,2 @@
-- Version 1 is live on [Agile-ToDo-List](https://thehood02.github.io/Agile-ToDo-List/v1)
-- Version 2 is live on [Agile-ToDo-List](https://thehood02.github.io/Agile-ToDo-List/v2)
+- Version 1 is live on [Agile-ToDo-List-v1](https://thehood02.github.io/Agile-ToDo-List/v1)
+- Version 2 is live on [Agile-ToDo-List-v2](https://thehood02.github.io/Agile-ToDo-List/v2)
