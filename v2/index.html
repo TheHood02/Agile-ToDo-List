@@ -9,31 +9,24 @@
     <link rel="icon" href="assets/title.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <!-- __ -> elements inside block; -- -> a modification to that block -->
+  <!-- __ = elements inside block; -- = a modification to that block -->
   <body>
-    <div class="navbar">
-      <div class="navbar__heading">Agile</div>
-      <hr />
-      <button id="add-task">+ Add Task</button>
-      <div class="navbar__add-button"></div>
-      <div class="navbar__categories">
-        <div class="category category--ideas">Ideas</div>
-        <div class="category category--reminders">Reminders</div>
-        <div class="category category--projects">Projects</div>
-        <div class="category category--resources">Resources</div>
+    <div class="main">
+      <div class="navbar">
+        <div class="navbar__heading">Agile</div>
+        <button id="add-task">+ Add Task</button>
+        <div class="navbar__add-button"></div>
+        <div class="navbar__categories">
+          <div class="category category--ideas">Ideas</div>
+          <div class="category category--reminders">Reminders</div>
+          <div class="category category--projects">Projects</div>
+          <div class="category category--resources">Resources</div>
+        </div>
       </div>
-    </div>
-    <div class="category-cards">
-      <!-- card card--blue card--orange card--green card--red 
-        card__title card__desc card__close OR card__delete -->
-      <!-- as for confirmation before deleting the card? -->
-      <!-- probably have to create these when clicking button only, this code might has to be in js part -->
-      <!-- <div class="card--heading ideas">Ideas</div>
-      <div class="card--heading reminders">Reminders</div>
-      <div class="card--heading projects">Projects</div>
-      <div class="card--heading resources">Resources</div> -->
-      <div class="card--heading"></div>
-      <div class="cards"></div>
+      <div class="category-cards">
+        <div class="card--heading"></div>
+        <div class="cards"></div>
+      </div>
     </div>
 
     <!-- Modal Section -->
@@ -41,30 +34,59 @@
     <div class="modal--bg">
       <div class="modal__contents">
         <div id="close">+</div>
-        <input id="title" type="text" placeholder="Title" required />
-        <textarea
-          id="desc"
-          cols="20"
-          rows="5"
-          placeholder="Description"
-          required
-        ></textarea>
-        <div class="radio-buttons">
-          <form action="">
-            <input type="radio" id="idea" name="category-selection" value="Idea" />
-            <label for="idea">Idea</label> <br />
+        <form action="">
+          <input id="title" type="text" placeholder="Title" required />
+          <textarea
+            id="desc"
+            cols="20"
+            rows="5"
+            placeholder="Description"
+            required
+          ></textarea>
+          <div class="radio-buttons">
+            <div>
+              <input
+                type="radio"
+                id="idea"
+                name="category-selection"
+                value="Ideas"
+                required
+              />
+              <label for="idea">Idea</label> <br />
+            </div>
 
-            <input type="radio" id="reminder" name="category-selection" value="Reminder"/>
-            <label for="reminder">Reminder</label> <br />
+            <div>
+              <input
+                type="radio"
+                id="reminder"
+                name="category-selection"
+                value="Reminders"
+              />
+              <label for="reminder">Reminder</label> <br />
+            </div>
 
-            <input type="radio" id="project" name="category-selection" value="Project"/>
-            <label for="project">Project</label> <br />
+            <div>
+              <input
+                type="radio"
+                id="project"
+                name="category-selection"
+                value="Projects"
+              />
+              <label for="project">Project</label> <br />
+            </div>
 
-            <input type="radio" id="resource" name="category-selection" value="Resource"/>
-            <label for="resource">Resource</label> <br />
-          </form>
-        </div>
-        <button id="submit-btn">Submit</button>
+            <div>
+              <input
+                type="radio"
+                id="resource"
+                name="category-selection"
+                value="Resources"
+              />
+              <label for="resource">Resource</label> <br />
+            </div>
+          </div>
+          <button id="submit-btn">Submit</button>
+        </form>
       </div>
     </div>
   </body>
