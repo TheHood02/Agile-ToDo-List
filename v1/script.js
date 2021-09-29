@@ -15,12 +15,12 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAAJ5oDDilTJ0ZCfJgjRC3yHOE22TKgPvU",
+  apiKey: "AIzaSyAOO1UER0xsYByKsfeYitBZBRw02Up03vA",
   databaseURL:
-    "https://firstproject-256e9-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "firstproject-256e9",
-  appId: "1:5674279605:web:89583ae3a9211f1f9694fc",
-  measurementId: "G-ZJ17SQCYQ1",
+    "https://fir-project-a747f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "fir-project-a747f",
+  appId: "1:188599957234:web:16c9c6a2be16fda867426b",
+  measurementId: "G-PRTZ5FRJCW",
 };
 
 // Initialize Firebase
