@@ -101,3 +101,20 @@ button {
 .del-btn {
     height: 3rem;
 }
+
+
+/* Github Link */
+.github-link {
+    font-size: 0.8rem;
+}
+
+.github-link:link, .github-link:visited {
+    color: #F9F8FA;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+}
+  
+.github-link:hover, .github-link:active {
+    text-decoration: underline;
+}
