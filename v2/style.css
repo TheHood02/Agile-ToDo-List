@@ -266,3 +266,19 @@ textarea {
   transform: translate(1px, 1px);
   box-shadow: 4px 5px 9px #AD00FF;
 }
+
+
+/* Github Link */
+.github-link {
+  font-size: 0.8rem;
+}
+
+.github-link:link, .github-link:visited {
+  color: #F9F8FA;
+  text-decoration: none;
+  /* display: inline-block; */
+}
+
+.github-link:hover, .github-link:active {
+  text-decoration: underline;
+}
