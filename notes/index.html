@@ -15,7 +15,6 @@
       <div class="navbar">
         <div class="navbar__heading">Agile</div>
         <button id="add-task">+ Add Task</button>
-        <div class="navbar__add-button"></div>
         <div class="navbar__categories">
           <div class="category category--ideas">Ideas</div>
           <div class="category category--reminders">Reminders</div>
@@ -37,52 +36,25 @@
         <div id="close">+</div>
         <form action="">
           <input id="title" type="text" placeholder="Title" required />
-          <textarea
-            id="desc"
-            cols="20"
-            rows="5"
-            placeholder="Description"
-            required
-          ></textarea>
+          <textarea id="desc" cols="20" rows="5" placeholder="Description" required></textarea>
           <div class="radio-buttons">
             <div>
-              <input
-                type="radio"
-                id="idea"
-                name="category-selection"
-                value="Ideas"
-                required
-              />
+              <input type="radio" id="idea" name="category-selection" value="Ideas" required />
               <label for="idea">Idea</label> <br />
             </div>
 
             <div>
-              <input
-                type="radio"
-                id="reminder"
-                name="category-selection"
-                value="Reminders"
-              />
+              <input type="radio" id="reminder" name="category-selection" value="Reminders" />
               <label for="reminder">Reminder</label> <br />
             </div>
 
             <div>
-              <input
-                type="radio"
-                id="project"
-                name="category-selection"
-                value="Projects"
-              />
+              <input type="radio" id="project" name="category-selection" value="Projects" />
               <label for="project">Project</label> <br />
             </div>
 
             <div>
-              <input
-                type="radio"
-                id="resource"
-                name="category-selection"
-                value="Resources"
-              />
+              <input type="radio" id="resource" name="category-selection" value="Resources" />
               <label for="resource">Resource</label> <br />
             </div>
           </div>

@@ -1,23 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
-import {
-  getDatabase,
-  ref,
-  get,
-  update,
-  remove,
-  push,
-} from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase, ref, get, update, remove, push } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAOO1UER0xsYByKsfeYitBZBRw02Up03vA",
-  databaseURL:
-    "https://fir-project-a747f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  databaseURL: "https://fir-project-a747f-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "fir-project-a747f",
   appId: "1:188599957234:web:16c9c6a2be16fda867426b",
   measurementId: "G-PRTZ5FRJCW",
@@ -62,20 +50,23 @@ function categoryToRender(category, btnName) {
   for (let item in todos[category]) {
     let newCard = document.createElement("div");
     newCard.classList.add("card");
-    if (category == 'Ideas') {
+
+    if (category == "Ideas") {
       newCard.style = "background-color: #1D384C";
-    } else if (category == 'Reminders') {
+    } else if (category == "Reminders") {
       newCard.style = "background-color: #413432";
-    } else if (category == 'Projects') {
+    } else if (category == "Projects") {
       newCard.style = "background-color: #1E363C";
-    } else if (category == 'Resources') {
+    } else if (category == "Resources") {
       newCard.style = "background-color: #412835";
     }
     cards.appendChild(newCard);
 
-    let newDelBtn = document.createElement("div");
-    let newTitle = document.createElement("div");
-    let newDesc = document.createElement("div");
+    const createDiv = () => document.createElement("div");
+
+    let newDelBtn = createDiv();
+    let newTitle = createDiv();
+    let newDesc = createDiv();
 
     newDelBtn.classList.add("card__del");
     newTitle.classList.add("card__title");
@@ -90,26 +81,21 @@ function categoryToRender(category, btnName) {
       window.location.reload();
     });
 
+    const cardsDesign = (color) => {
+      cardHeadingType.style = `color: ${color}`;
+      newDelBtn.style = `color: ${color}`;
+      newTitle.style = `color: ${color}`;
+      newDesc.style = `color: ${color}`;
+    };
+
     if (category == "Ideas") {
-      cardHeadingType.style = "color: #0ABDE3";
-      newDelBtn.style = "color: #0ABDE3";
-      newTitle.style = "color: #0ABDE3";
-      newDesc.style = "color: #0ABDE3";
+      cardsDesign("#0ABDE3");
     } else if (category == "Reminders") {
-      cardHeadingType.style = "color: #FF9F44";
-      newDelBtn.style = "color: #FF9F44";
-      newTitle.style = "color: #FF9F44";
-      newDesc.style = "color: #FF9F44";
+      cardsDesign("#FF9F44");
     } else if (category == "Projects") {
-      cardHeadingType.style = "color: #11AC84";
-      newDelBtn.style = "color: #11AC84";
-      newTitle.style = "color: #11AC84";
-      newDesc.style = "color: #11AC84";
+      cardsDesign("#11AC84");
     } else if (category == "Resources") {
-      cardHeadingType.style = "color: #EE5353";
-      newDelBtn.style = "color: #EE5353";
-      newTitle.style = "color: #EE5353";
-      newDesc.style = "color: #EE5353";
+      cardsDesign("#EE5353");
     }
 
     newCard.appendChild(newDelBtn);
@@ -157,9 +143,7 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 document.getElementById("submit-btn").addEventListener("click", () => {
-  const categorySelected = document.querySelector(
-    'input[name="category-selection"]:checked'
-  ).value;
+  const categorySelected = document.querySelector('input[name="category-selection"]:checked').value;
   const title = document.getElementById("title").value;
   const desc = document.getElementById("desc").value;
   const obj = {

@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
   font-family: "Montserrat";
   box-sizing: border-box;
-  color: white; /* remove this later */
+  color: white;
 }
 
 html,
@@ -32,42 +35,42 @@ Nav Bar
 =============== */
 
 .navbar {
-    width: 250px;
-    padding: 0 20px;
-    height: 100%;
+  width: 250px;
+  padding: 0 20px;
+  height: 100%;
 }
 
 .navbar__heading {
-    color: #6100FF;
-    text-shadow: 3px 4px 8px #AD00FF;
-    font-size: 2rem;
-    text-align: center;
-    margin: 60px 0;
-    font-weight: 600;
-    letter-spacing: 5px;
+  color: #6100ff;
+  text-shadow: 3px 4px 8px #ad00ff;
+  font-size: 2rem;
+  text-align: center;
+  margin: 60px 0;
+  font-weight: 600;
+  letter-spacing: 5px;
 }
 
 #add-task {
-    width: 95%;
-    padding: 20px 0;
-    letter-spacing: 3px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    background-color: #62009E;
-    border: none;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    font-weight: 600;
-  }
+  width: 95%;
+  padding: 20px 0;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background-color: #62009e;
+  border: none;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
 
 #add-task:hover,
 #add-task:focus {
-  box-shadow: 3px 4px 8px #AD00FF;
+  box-shadow: 3px 4px 8px #ad00ff;
 }
 
 #add-task:focus {
-    border: #9d00ff;
-    transform: translate(.5px, .5px);
+  border: #9d00ff;
+  transform: translate(0.5px, 0.5px);
 }
 
 .category {
@@ -88,36 +91,35 @@ Nav Bar
 }
 
 .category--ideas {
-    color: #0ABDE3;
+  color: #0abde3;
 }
 
 .category--ideas:hover {
-    text-shadow: 3px 4px 8px #00d0ff;
+  text-shadow: 3px 4px 8px #00d0ff;
 }
 
 .category--reminders {
-    color: #FF9F44;
-
+  color: #ff9f44;
 }
 
 .category--reminders:hover {
-    text-shadow: 3px 4px 8px #ff7b00;
+  text-shadow: 3px 4px 8px #ff7b00;
 }
 
 .category--projects {
-    color: #11AC84;
+  color: #11ac84;
 }
 
 .category--projects:hover {
-    text-shadow: 3px 4px 8px #00ffbf;
+  text-shadow: 3px 4px 8px #00ffbf;
 }
 
 .category--resources {
-    color: #EE5353;
+  color: #ee5353;
 }
 
 .category--resources:hover {
-    text-shadow: 3px 4px 8px #ff0000;
+  text-shadow: 3px 4px 8px #ff0000;
 }
 
 /* ===============
@@ -162,18 +164,18 @@ Category Cards
 }
 
 .card__desc {
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin: 10px 0;
 }
 
 .card__del {
   position: absolute;
-	top: 0;
-	right: 10px;
-	font-size: 42px;
-	color: #333;
-	transform: rotate(45deg);
-	cursor: pointer;
+  top: 0;
+  right: 10px;
+  font-size: 42px;
+  color: #333;
+  transform: rotate(45deg);
+  cursor: pointer;
 }
 
 /* ===============
@@ -192,7 +194,7 @@ Modal Design
 }
 
 .modal__contents {
-  background-color: #3D2473;
+  background-color: #3d2473;
   position: relative;
   text-align: center;
   width: 375px;
@@ -216,7 +218,7 @@ Modal Design
 input[type="text"] {
   height: 45px;
   margin-top: 40px;
-  font-size: 1.25rem
+  font-size: 1.25rem;
 }
 
 textarea {
@@ -244,11 +246,10 @@ textarea {
 .radio-buttons > div {
   height: 40px;
   font-size: 1.2rem;
-  
 }
 
 #submit-btn {
-  background-color: #7D43E2;
+  background-color: #7d43e2;
   border: none;
   padding: 15px 25px;
   border-radius: 5px;
@@ -259,26 +260,27 @@ textarea {
 }
 
 #submit-btn:hover {
-  box-shadow: 3px 4px 8px #AD00FF;
+  box-shadow: 3px 4px 8px #ad00ff;
 }
 
 #submit-btn:focus {
   transform: translate(1px, 1px);
-  box-shadow: 4px 5px 9px #AD00FF;
+  box-shadow: 4px 5px 9px #ad00ff;
 }
-
 
 /* Github Link */
 .github-link {
   font-size: 0.8rem;
 }
 
-.github-link:link, .github-link:visited {
-  color: #F9F8FA;
+.github-link:link,
+.github-link:visited {
+  color: #f9f8fa;
   text-decoration: none;
   /* display: inline-block; */
 }
 
-.github-link:hover, .github-link:active {
+.github-link:hover,
+.github-link:active {
   text-decoration: underline;
 }
