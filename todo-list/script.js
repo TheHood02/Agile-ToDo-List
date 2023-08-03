@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
 import {
   getDatabase,
   ref,
@@ -17,7 +16,7 @@ import {
 const firebaseConfig = {
   apiKey: "AIzaSyAOO1UER0xsYByKsfeYitBZBRw02Up03vA",
   databaseURL:
-    "https://fir-project-a747f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "https://agile-personal-webapp-project-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "fir-project-a747f",
   appId: "1:188599957234:web:16c9c6a2be16fda867426b",
   measurementId: "G-PRTZ5FRJCW",
@@ -25,7 +24,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // declare variables
 const db = getDatabase(app);
