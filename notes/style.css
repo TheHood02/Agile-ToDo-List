@@ -151,7 +151,7 @@ Category Cards
 .card {
   width: 250px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 20px;
   letter-spacing: 1.75px;
   margin: 20px;
   position: relative;
